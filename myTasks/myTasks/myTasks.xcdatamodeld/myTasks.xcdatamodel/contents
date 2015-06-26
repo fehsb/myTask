@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Disciplina" representedClassName="Disciplina" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tarefas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tarefa" inverseName="disciplina" inverseEntity="Tarefa" syncable="YES"/>
+    </entity>
+    <entity name="Tarefa" representedClassName="Tarefa" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nota" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="peso" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="disciplina" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Disciplina" inverseName="tarefas" inverseEntity="Disciplina" syncable="YES"/>
+    </entity>
+    <fetchRequest name="FetchRequest" entity="Tarefa" predicateString="nome CONTAINS &quot;&quot;"/>
+    <elements>
+        <element name="Disciplina" positionX="-108" positionY="-72" width="128" height="73"/>
+        <element name="Tarefa" positionX="297" positionY="-117" width="128" height="150"/>
+    </elements>
+</model>
